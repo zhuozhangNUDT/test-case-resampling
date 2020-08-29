@@ -6,6 +6,7 @@ do
 done
  
 cp -r analysePro/averageResult averageResult
+chmod u+x averageResult
 ./averageResult DLFinalresult.txt
 rm -f averageResult
 rm -f DLFinalresult.txt
@@ -16,6 +17,7 @@ do
 done
  
 cp -r analysePro/averageResultResample averageResultResample
+chmod u+x averageResultResample
 ./averageResultResample DLFinalresult.txt
 rm -f averageResultResample
 rm -f DLFinalresult.txt
