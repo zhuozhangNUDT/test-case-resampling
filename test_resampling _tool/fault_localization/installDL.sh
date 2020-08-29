@@ -12,6 +12,7 @@ echo excuting python NN.py
 python NN.py dev
 
 cd Coverage_Info
+chmod u+x formatDLResult
 echo excuting formatDLResult.c
 ./formatDLResult
 cd ..
@@ -22,6 +23,7 @@ mv Coverage_Info/DL_result.txt ${subject_dir}/result/v${version}
 cd ${subject_dir}
 echo excuting DL.c
 cp -r analysePro/DL DL
+chmod u+x DL
 ./DL result/v${version}/componentinfo.txt result/v${version}/DL_result.txt
 rm -f DL
 
@@ -30,6 +32,7 @@ mv DeepLearning.txt result/v${version}/DL_result
 
 echo excuting sliceDL.c
 cp -r analysePro/sliceDL sliceDL
+chmod u+x sliceDL
 ./sliceDL result/v${version}/componentinfo.txt result/v${version}/DL_result.txt sliceResult/v${version}/sliceResult.txt
 rm -f sliceDL
 echo moving SliceDeepLearning.txt to result
@@ -38,6 +41,7 @@ cd ..
 
 echo get final result
 cp -r analysePro/translate translate
+chmod u+x translate
 ./translate ${subject_dir}/result/v${version}/DL_result/DeepLearning.txt ${subject_dir}/result/v${version}/DL_result/SliceDeepLearning.txt
 rm -f translate
 
